@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MemberService } from 'src/Services/member.service';
 
 @Component({
   selector: 'app-member-form',
@@ -7,6 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./member-form.component.css']
 })
 export class MemberFormComponent implements OnInit {
+  
+  constructor(private MS:MemberService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -23,6 +26,8 @@ export class MemberFormComponent implements OnInit {
 
   onSub(): void {
     console.log(this.form.value);
+    const memberToSave = this.form.value;
+    this.MS.save(memberToSave);
   }
   form!:FormGroup;
 
