@@ -9,9 +9,7 @@ import { GLOBAL_DB } from 'src/app/app.config';
   providedIn: 'root'
 })
 export class MemberService {
-  /**
-   *
-   */
+
   constructor(private httpClient: HttpClient) {}
 
   tab:Member[] = GLOBAL_DB._DB.members;
@@ -22,5 +20,19 @@ export class MemberService {
    /* this is because we're only doing front end :) */
     this.tab.push(member);
     return new Observable(observer => observer.next())  
+  }
+
+  getMemberByID(id: string): Observable<Member> {
+    // this is an example if the backend is springboot
+    // return this.httpClient.get<Member>('localhost:8080/api/Members/id',
+    
+    // this is because we're only doing front
+     return new Observable(observer => {
+        observer.next(this.tab.find(m => m.id == id))
+        }
+      );
+
+    // another way using filter 
+    //return new Observable (observer => { observer.next(this.tab.filter(m =>{m.id == id})[0] ?? undefined)})
   }
 }
