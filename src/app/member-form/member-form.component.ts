@@ -31,7 +31,8 @@ export class MemberFormComponent implements OnInit {
   onSub(): void {
     console.log(this.form.value);
     const memberToSave = this.form.value;
-    this.MS.save(memberToSave).subscribe((res)=>{
+    const memberNew = {...memberToSave, id:Math.ceil(Math.random()*10000), createdDate: new Date().toISOString()}
+    this.MS.save(memberNew).subscribe((res)=>{
       this.router.navigate(['/members'])
     });
   }

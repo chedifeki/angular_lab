@@ -15,7 +15,7 @@ export class MemberService {
   constructor(private httpClient: HttpClient) {}
 
   tab:Member[] = GLOBAL_DB._DB.members;
-  save(member:any): Observable<void>
+  save(member:Member): Observable<void>
   {
    // return  this.httpClient.post<void>('localhost:8080/api', member); // <<<--- this is the way to go if there was a backend
    
