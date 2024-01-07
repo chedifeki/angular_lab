@@ -45,7 +45,19 @@ export class MemberComponent {
   onDelete(id: string):void {
    this.ms.deleteMemberByID(id).subscribe(() => {
     // if we had a backend this would become a fetch operation 
-    this.dataSource = this.ms.tab
+    //this.dataSource = this.ms.tab
+    this.getAll()
    })
   }
+
+
+  getAll():void {
+     this.ms.getAll().subscribe((members) =>{
+        this.dataSource = members
+     })
+
+  }
+
 }
+ 
+

@@ -11,6 +11,7 @@ import { GLOBAL_DB } from 'src/app/app.config';
 export class MemberService {
 
 
+
   constructor(private httpClient: HttpClient) {}
 
   tab:Member[] = GLOBAL_DB._DB.members;
@@ -44,6 +45,12 @@ export class MemberService {
     //return this.httpClient.delete<void>('localhost:8080/api/member/id') // as usual this is when we have a backend
     return new Observable( observer => {
       observer.next()
+    });
+  }
+
+  getAll(): Observable<Member[]> {
+    return new Observable ( observer => {
+      observer.next(this.tab)
     });
   }
 }
