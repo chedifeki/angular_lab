@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,13 +17,15 @@ import { MemberFormComponent } from './member-form/member-form.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
-    MemberFormComponent
+    MemberFormComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -35,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

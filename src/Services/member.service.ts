@@ -49,6 +49,7 @@ export class MemberService {
   }
 
   getAll(): Observable<Member[]> {
+    // return this.httpsClient.get<Member[]>('localhost:8080/api/Members)
     return new Observable ( observer => {
       observer.next(this.tab)
     });

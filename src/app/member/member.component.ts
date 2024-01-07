@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { GLOBAL_DB } from '../app.config';
 import { Member } from 'src/Models/Member';
 import { MemberService } from 'src/Services/member.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class MemberComponent {
   /**
    *
    */
-  constructor( private ms :MemberService) {
+  constructor( private ms :MemberService, private dialog:MatDialog) {
     
   }
 
@@ -43,11 +45,22 @@ export class MemberComponent {
 
 
   onDelete(id: string):void {
-   this.ms.deleteMemberByID(id).subscribe(() => {
-    // if we had a backend this would become a fetch operation 
-    //this.dataSource = this.ms.tab
-    this.getAll()
-   })
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      height: "400px",
+      width:"400px"
+    });
+
+    dialogRef.afterClosed().subscribe( (x) => {
+      if ( x == true){
+        this.ms.deleteMemberByID(id).subscribe(() => {
+          // if we had a backend this would become a fetch operation 
+          //this.dataSource = this.ms.tab
+          this.getAll()
+      
+          });
+      }
+    })
+  
   }
 
 

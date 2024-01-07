@@ -1,5 +1,8 @@
-<div fxLayout="row" fxLayoutAlign="end center">
-  <button  routerLink="/create">Create New</button>
+<div fxLayout="row" class="mb-3" fxLayoutAlign="end center" >
+  <button mat-raised-button routerLink="/create" color="primary">
+    <mat-icon aria-hidden="false"   aria-label="Example home icon" fontIcon="add"></mat-icon>
+    New Member
+  </button>
 </div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
