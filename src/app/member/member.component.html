@@ -39,7 +39,7 @@
       <!-- createdDate -->
       <ng-container matColumnDef="createdDate">
         <th mat-header-cell *matHeaderCellDef> Created On </th>
-        <td mat-cell *matCellDef="let element"> {{element.createdDate | date:'h:mm a z'}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.createdDate | date:'medium'}} </td>
       </ng-container>
 
       <!-- actions -->

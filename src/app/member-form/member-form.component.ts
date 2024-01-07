@@ -11,6 +11,7 @@ import { MemberService } from 'src/Services/member.service';
 })
 export class MemberFormComponent implements OnInit {
   form!:FormGroup;
+  memberGlobal!:Member;
   constructor(private MS:MemberService, private router:Router, private activatedRoute:ActivatedRoute) {
     // this is dependency injection
   }
@@ -21,6 +22,7 @@ export class MemberFormComponent implements OnInit {
     // if id exists : init form with parameter member[id] -> edit
     if (!!idCourant) {
       this.MS.getMemberByID(idCourant).subscribe((member) => {
+        this.memberGlobal = member;
         this.initFormWithMember(member);
       })
     } else {
@@ -50,9 +52,10 @@ export class MemberFormComponent implements OnInit {
   }
 
   onSub(): void {
-    const memberToSave = this.form.value;
-    const memberNew = {...memberToSave, id:Math.ceil(Math.random()*10000), createdDate: new Date().toISOString()}
-    this.MS.save(memberNew).subscribe((res)=>{
+    const memberToSave = {...this.memberGlobal,...this.form.value, 
+      id: this.memberGlobal?.id ?? Math.ceil(Math.random()*10000), 
+      createdDate: this.memberGlobal?.createdDate ?? new Date().toISOString()}
+    this.MS.save(memberToSave).subscribe((res)=>{
       this.router.navigate(['/members'])
     });
   }
