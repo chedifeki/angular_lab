@@ -1,4 +1,20 @@
 # Lab
+## Pre-requisites : 
+create a Firebase project and app, get your API key and put them in a "environment.ts" file under src/app with the following pattern : 
+```
+    export const environment = {
+     firebase : {
+        apiKey: "your-api-key",
+        authDomain: "your-auth-domain",
+        projectId: "your-project-id",
+        storageBucket: "your-storage-bucket",
+        messagingSenderId: "your-messaing-sender-id",
+        appId: "your-app-id",
+        measurementId: "your-measurement-id"
+      },
+};
+```
+all of which you can easily copy from the firebase application site
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 

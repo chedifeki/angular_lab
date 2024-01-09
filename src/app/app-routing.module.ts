@@ -6,6 +6,7 @@ import { ToolListComponent } from './tool-list/tool-list.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -44,7 +45,7 @@ const routes: Routes = [
     }, 
   { path: '', 
     pathMatch: 'full',
-    redirectTo:"members"
+    component: LoginComponent
   },
   
   // keep last

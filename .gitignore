@@ -43,3 +43,4 @@ Thumbs.db
 
 # custom 
 *.zip
+src/app/environment.ts
