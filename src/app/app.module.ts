@@ -24,6 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { LayoutComponentComponent } from './layout-component/layout-component.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToolListComponent } from './tool-list/tool-list.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { LayoutComponentComponent } from './layout-component/layout-component.co
     MemberComponent,
     MemberFormComponent,
     ConfirmDialogComponent,
-    LayoutComponentComponent
+    LayoutComponentComponent,
+    DashboardComponent,
+    ToolListComponent,
+    ArticleListComponent,
+    EventListComponent
   ],
   imports: [
     HttpClientModule,
