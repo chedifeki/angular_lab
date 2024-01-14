@@ -12,13 +12,19 @@ import { MatPaginator } from '@angular/material/paginator';
 
 })
 export class ArticleListComponent {
+onAssign(arg0: any) {
+throw new Error('Method not implemented.');
+}
+onDelete(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
   constructor(private service:ArticleService) {
     
   }
 
   dataSource = new MatTableDataSource<Article>(this.service.data);
-  displayedColumns: string[] = ["id", "type", "titre", "lien", "date", "sourcePDF"];
+  displayedColumns: string[] = ["id", "type", "titre", "lien", "date", "sourcePDF", "actions"];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

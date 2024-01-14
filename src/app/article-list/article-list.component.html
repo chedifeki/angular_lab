@@ -1,44 +1,60 @@
 <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
-  
-      <!-- id Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
-       <!-- type Column -->
-       <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> Type </th>
-        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-      </ng-container>
-       <!-- titre Column -->
-       <ng-container matColumnDef="titre">
-        <th mat-header-cell *matHeaderCellDef> Titre </th>
-        <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
-      </ng-container>
-       <!-- Lien Column -->
-       <ng-container matColumnDef="lien">
-        <th mat-header-cell *matHeaderCellDef> Lien </th>
-        <td mat-cell *matCellDef="let element"> {{element.lien}} </td>
-      </ng-container>
-       <!-- Date Column -->
-       <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-      </ng-container>
-       <!-- sourcePDF Column -->
-       <ng-container matColumnDef="sourcePDF">
-        <th mat-header-cell *matHeaderCellDef> PDF </th>
-        <td mat-cell *matCellDef="let element"> {{element.sourcepdf}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
-  </div>
-  
+  <table mat-table [dataSource]="dataSource">
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+    <!-- type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+    <!-- titre Column -->
+    <ng-container matColumnDef="titre">
+      <th mat-header-cell *matHeaderCellDef>Titre</th>
+      <td mat-cell *matCellDef="let element">{{ element.titre }}</td>
+    </ng-container>
+    <!-- Lien Column -->
+    <ng-container matColumnDef="lien">
+      <th mat-header-cell *matHeaderCellDef>Lien</th>
+      <td mat-cell *matCellDef="let element">{{ element.lien }}</td>
+    </ng-container>
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+    <!-- sourcePDF Column -->
+    <ng-container matColumnDef="sourcePDF">
+      <th mat-header-cell *matHeaderCellDef>PDF</th>
+      <td mat-cell *matCellDef="let element">{{ element.sourcepdf }}</td>
+    </ng-container>
+
+    <!-- actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button title="Edit" mat-raised-button color="primary" routerLink="/articles/{{ element.id }}/edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button title="Delete"  mat-raised-button color="primary" (click)="onDelete(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button title="Assign" mat-raised-button color="primary" (click)="onAssign(element.id)">
+            <mat-icon>assignment_ind</mat-icon>
+          </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
