@@ -1,3 +1,5 @@
+import { Article } from "./Article"
+
 export interface Member
 {
         id:string
@@ -6,5 +8,6 @@ export interface Member
         cv:string
         type:string
         createdDate:string
+      //  tab_pub:Article[],
       
 }

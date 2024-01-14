@@ -6,7 +6,8 @@
             "name":"chedi",
             "cv":"lien", 
             "type":"student",
-            "createdDate":"12/28/2023"
+            "createdDate":"12/28/2023", 
+            "tab_pub":["pub1", "pub2"]
           },
           {
             "id":"1475",
@@ -14,7 +15,74 @@
             "name":"imen",
             "cv":"lien", 
             "type":"teacher",
-            "createdDate":"12/28/2023"
+            "createdDate":"12/28/2023",
+            "tab_pub":["pub3", "pub4"]
           }
+    ], 
+    "articles": [
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      },
+      {
+        "id":"54236",
+        "type": "Scientifique", 
+        "titre":"On the Wave-Particle Duality of Positrons",
+        "lien":"link",
+        "date":"01/14/2024",
+        "sourcepdf":"link_to_pdf"
+      }
     ]
 }

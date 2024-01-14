@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { MemberFormComponent } from './member-form/member-form.component';
 
@@ -62,6 +63,8 @@ import { LoginComponent } from './login/login.component';
     MatListModule,
     FirebaseModule,
     MatCardModule,
+    MatPaginatorModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
