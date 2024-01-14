@@ -21,7 +21,8 @@ export class MemberComponent {
 
   displayedColumns: string[] = ['id','cin', 'name', 'cv', 'type', 'createdDate', 'action'];
   nom = "chedi";
-  dataSource:Member[] = GLOBAL_DB._DB.members
+  dataSource:Member[] = this.ms.tab;
+  
 
   source:any[]=[
     {

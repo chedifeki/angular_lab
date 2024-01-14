@@ -1,5 +1,5 @@
 <div fxLayout="row" class="mb-3" fxLayoutAlign="end center" >
-  <button mat-raised-button routerLink="/create" color="primary">
+  <button mat-raised-button routerLink="/members/create" color="primary">
     <mat-icon aria-hidden="false"   aria-label="Example home icon" fontIcon="add"></mat-icon>
     New Member
   </button>
@@ -46,7 +46,7 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Actions  </th>
         <td mat-cell *matCellDef="let element">
-            <button routerLink="/{{ element.id }}/edit">
+            <button routerLink="/members/{{ element.id }}/edit">
               <mat-icon>edit</mat-icon>
             </button>
             <button (click)="onDelete(element.id)">

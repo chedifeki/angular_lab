@@ -13,8 +13,6 @@ export class LayoutComponentComponent {
   constructor(private AS: AuthService, private router:Router) {
      this.AS.getUserClaims().then((a)=>{
       this.user = a;
-      console.log("in layout constructor")
-      console.log(this.user.displayName)
      })
   }
 

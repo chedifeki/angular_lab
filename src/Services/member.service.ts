@@ -15,16 +15,21 @@ export class MemberService {
   constructor(private httpClient: HttpClient) {}
 
   tab:Member[] = GLOBAL_DB._DB.members;
-  save(member:Member): Observable<void>
+  save(member:any): Observable<void>
   {
    // return  this.httpClient.post<void>('localhost:8080/api', member); // <<<--- this is the way to go if there was a backend
    
    /* this is because we're only doing front end :) */
-   //this.tab = this.tab.filter( item => item.id != member.id);
-   this.tab.push(member);
-   console.log(this.tab)
 
-    return new Observable(observer => observer.next())  
+   const memberNew = {...member, 
+    id: member.id ?? Math.ceil(Math.random()*10000).toString(), 
+    createdDate: member.createdDate ?? new Date().toISOString(),
+   }
+
+   this.tab = this.tab.filter( item => item.id != member.id);
+   this.tab.push(memberNew);
+
+   return new Observable(observer => observer.next())  
   }
 
   getMemberByID(id: string): Observable<Member> {
