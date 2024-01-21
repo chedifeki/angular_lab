@@ -4,6 +4,8 @@ import { GLOBAL_DB } from '../app.config';
 import { ArticleService } from 'src/Services/article.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ArticleFormComponent } from '../article-form/article-form.component';
 
 @Component({
   selector: 'app-article-list',
@@ -12,14 +14,8 @@ import { MatPaginator } from '@angular/material/paginator';
 
 })
 export class ArticleListComponent {
-onAssign(arg0: any) {
-throw new Error('Method not implemented.');
-}
-onDelete(arg0: any) {
-throw new Error('Method not implemented.');
-}
 
-  constructor(private service:ArticleService) {
+  constructor(private service:ArticleService, private dialog:MatDialog) {
     
   }
 
@@ -33,4 +29,19 @@ throw new Error('Method not implemented.');
   }
 
 
+  onCreate() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    
+    this.dialog.open(ArticleFormComponent, dialogConfig);
+  }
+  
+  onAssign(arg0: any) {
+  throw new Error('Method onAssign not implemented.');
+  }
+  onDelete(arg0: any) {
+  throw new Error('Method onDelete not implemented.');
+  }
 }

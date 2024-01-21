@@ -29,6 +29,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { FirebaseModule } from 'src/modules/firebase.module';
 import { LoginComponent } from './login/login.component';
+import { ArticleFormComponent } from './article-form/article-form.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { LoginComponent } from './login/login.component';
     ToolListComponent,
     ArticleListComponent,
     EventListComponent,
-    LoginComponent
+    LoginComponent,
+    ArticleFormComponent
   ],
   imports: [
     HttpClientModule,
