@@ -16,6 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule} from '@angular/material/core';
+
+
+
 
 import { MemberFormComponent } from './member-form/member-form.component';
 
@@ -30,6 +35,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { FirebaseModule } from 'src/modules/firebase.module';
 import { LoginComponent } from './login/login.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
+import { EventCreateComponent } from './event-create/event-create.component';
 
 
 @NgModule({
@@ -44,7 +50,8 @@ import { ArticleFormComponent } from './article-form/article-form.component';
     ArticleListComponent,
     EventListComponent,
     LoginComponent,
-    ArticleFormComponent
+    ArticleFormComponent,
+    EventCreateComponent
   ],
   imports: [
     HttpClientModule,
@@ -66,7 +73,8 @@ import { ArticleFormComponent } from './article-form/article-form.component';
     FirebaseModule,
     MatCardModule,
     MatPaginatorModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

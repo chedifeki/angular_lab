@@ -7,6 +7,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { EventCreateComponent } from './event-create/event-create.component';
 
 const routes: Routes = [
   {
@@ -34,11 +35,6 @@ const routes: Routes = [
     component: ArticleListComponent
   },
   {
-    path: "events",
-    pathMatch: 'full',
-    component: EventListComponent
-  }, 
-  {
     path: "dashboard",
     pathMatch: 'full',
     component: DashboardComponent
@@ -46,6 +42,16 @@ const routes: Routes = [
   { path: '', 
     pathMatch: 'full',
     component: LoginComponent
+  },
+  {
+    path: "events",
+    pathMatch: 'full',
+    component: EventListComponent
+  },
+  {
+    path: "events/create",
+    pathMatch: 'full',
+    component: EventCreateComponent
   },
   
   // keep last
