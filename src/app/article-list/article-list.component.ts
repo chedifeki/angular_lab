@@ -11,16 +11,20 @@ import { ArticleFormComponent } from '../article-form/article-form.component';
   selector: 'app-article-list',
   templateUrl: './article-list.component.html',
   styleUrls: ['./article-list.component.css'],
-
 })
 export class ArticleListComponent {
-
-  constructor(private service:ArticleService, private dialog:MatDialog) {
-    
-  }
+  constructor(private service: ArticleService, private dialog: MatDialog) {}
 
   dataSource = new MatTableDataSource<Article>(this.service.data);
-  displayedColumns: string[] = ["id", "type", "titre", "lien", "date", "sourcePDF", "actions"];
+  displayedColumns: string[] = [
+    'id',
+    'type',
+    'titre',
+    'lien',
+    'date',
+    'sourcePDF',
+    'actions',
+  ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -28,20 +32,28 @@ export class ArticleListComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-
   onCreate() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    
-    this.dialog.open(ArticleFormComponent, dialogConfig);
+
+    const dialogRef = this.dialog.open(ArticleFormComponent, dialogConfig);
+
+    dialogRef
+      .afterClosed()
+      .subscribe((data) => {
+        console.log('Dialog output:', data);
+        this.service.save(data).subscribe(() => {
+          this.dataSource.data = this.service.data;
+        })
+      });
   }
-  
+
   onAssign(arg0: any) {
-  throw new Error('Method onAssign not implemented.');
+    throw new Error('Method onAssign not implemented.');
   }
   onDelete(arg0: any) {
-  throw new Error('Method onDelete not implemented.');
+    throw new Error('Method onDelete not implemented.');
   }
 }

@@ -21,8 +21,7 @@ export class ArticleFormComponent implements OnInit{
   }
   initForm():void{
     this.form = new FormGroup({
-      id: new FormControl( null, [Validators.required]),
-      type: new FormControl(null,[]),
+      type: new FormControl(null,[Validators.required]),
       titre: new FormControl(null, []),
       lien: new FormControl(null, []),
       date: new FormControl(null, []),
@@ -32,6 +31,7 @@ export class ArticleFormComponent implements OnInit{
   }
 
   save() {
+      console.log(this.form.value)
       this.dialogRef.close(this.form.value);
   }
 
