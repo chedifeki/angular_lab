@@ -7,8 +7,25 @@
             "cv":"lien", 
             "type":"student",
             "createdDate":"12/28/2023", 
-            "tab_pub":["pub1", "pub2"],
-            "tab_evt":["evt1", "evt2"]
+            "tab_pub":[
+              {
+                "id":"54236",
+                "type": "Scientifique", 
+                "titre":"On the Wave-Particle Duality of Positrons",
+                "lien":"link",
+                "date":"01/14/2024",
+                "sourcepdf":"link_to_pdf"
+              }
+            ],
+            "tab_evt":[
+              {
+                "id":"7987645",
+                "titre":"fête de la lune",
+                "date_deb":"02/14/2024", 
+                "date_fin":"02/14/2024",
+                "lieu": "sousse" 
+              }
+            ]
           },
           {
             "id":"1475",
@@ -17,8 +34,33 @@
             "cv":"lien", 
             "type":"teacher",
             "createdDate":"12/28/2023",
-            "tab_pub":["pub3", "pub4"], 
-            "tab_evt":["evt3", "evt4"]
+            "tab_pub":[
+              {
+                "id":"54236",
+                "type": "Scientifique", 
+                "titre":"On the Wave-Particle Duality of Positrons",
+                "lien":"link",
+                "date":"01/14/2024",
+                "sourcepdf":"link_to_pdf"
+              },
+              {
+                "id":"54236",
+                "type": "Scientifique", 
+                "titre":"On the Wave-Particle Duality of Positrons",
+                "lien":"link",
+                "date":"01/14/2024",
+                "sourcepdf":"link_to_pdf"
+              }
+            ], 
+            "tab_evt":[
+              {
+              "id":"7456123",
+              "titre":"anniversaire",
+              "date_deb":"01/21/2024", 
+              "date_fin":"01/21/2024",
+              "lieu": "sfax" 
+            }
+          ]
           }
     ], 
     "articles": [

@@ -1,1 +1,51 @@
-<p>dashboard works!</p>
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch" >
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Members</mat-card-title>
+            <mat-card-subtitle>{{ nb_members }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Articles</mat-card-title>
+            <mat-card-subtitle>{{ nb_articles }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Events</mat-card-title>
+            <mat-card-subtitle>{{ nb_evts }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Tools</mat-card-title>
+            <mat-card-subtitle>{{ nb_tools }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch" >
+
+    <div class="chart-wrapper">
+        <canvas baseChart
+                [type]="'line'"
+          [datasets]="members_chart_data"
+          [labels]="members_chart_labels"
+          [options]="members_chart_options"
+          >
+        </canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [type]="'pie'"
+          [datasets]="articles_chart_data"
+          [labels]="articles_chart_labels"
+          [options]="aticles_chart_options"
+          >
+        </canvas>
+      </div>
+
+</div>

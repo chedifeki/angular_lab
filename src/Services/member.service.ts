@@ -9,6 +9,31 @@ import { GLOBAL_DB } from 'src/app/app.config';
   providedIn: 'root'
 })
 export class MemberService {
+  getNBPerType(): Observable<number[]> {
+    let counts :number[] = [];
+    let count_students = 0;
+    let count_teachers = 0;
+    this.tab.forEach(member=>
+      {
+        if(member.type == "teacher"){
+          count_teachers ++;
+        }
+        if(member.type == "student"){
+          count_students ++ ;
+        }
+      })
+
+      counts.push(count_students, count_teachers)
+    return new Observable(observer=> observer.next(counts))
+  }
+  
+  getNBArticleByMember(): Observable<number[]> {
+    let art_count: number[]=[];
+    this.tab.forEach((member) => {
+      art_count.push(member.tab_pub.length)
+    })
+    return new Observable(observer => observer.next(art_count));
+  }
 
 
 

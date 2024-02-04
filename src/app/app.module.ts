@@ -36,6 +36,7 @@ import { FirebaseModule } from 'src/modules/firebase.module';
 import { LoginComponent } from './login/login.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
 import { EventCreateComponent } from './event-create/event-create.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { EventCreateComponent } from './event-create/event-create.component';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

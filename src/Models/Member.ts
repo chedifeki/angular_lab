@@ -1,4 +1,5 @@
 import { Article } from "./Article"
+import { Event } from "./Event"
 
 export interface Member
 {
@@ -8,6 +9,7 @@ export interface Member
         cv:string
         type:string
         createdDate:string
-      //  tab_pub:Article[],
+        tab_pub:Article[],
+        tab_evt:Event[],
       
 }
